@@ -14,7 +14,8 @@ class LowonganController extends Controller
      */
     public function index()
     {
-        //
+        $lowongan = Lowongan::with('Member')->get();
+        return view('lowongan.index',compact('lowongan'));
     }
 
     /**
